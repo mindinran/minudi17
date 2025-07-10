@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waste Sorting Guide | Recycling Assistant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-content">
+            <h1>♻ Waste Sorting Assistant</h1>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="guide.html" class="nav-link active">Recycling Guide</a>
+                <a href="location.html" class="nav-link">Drop-off Locations</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="guide-container">
+        <section class="search-section">
+            <h2 class="section-title">Find Recycling Information</h2>
+            
+            <div class="search-tools">
+                <!-- Text Search -->
+                <div class="search-tool">
+                    <h3>Search by Item Name</h3>
+                    <div class="input-group">
+                        <input type="text" id="waste-search" placeholder="e.g. plastic bottles, cardboard..." 
+                               aria-label="Search for waste items">
+                        <button class="search-btn" onclick="searchWaste()">
+                            <span class="btn-icon">🔍</span> Search
+                        </button>
+                    </div>
+                    <div id="search-results" class="search-results"></div>
+                </div>
+
+                <!-- Image Upload -->
+                <div class="search-tool">
+                    <h3>Identify by Image</h3>
+                    <div class="input-group">
+                        <label for="waste-image" class="file-upload-label">
+                            <span id="file-label-text">Choose an image...</span>
+                            <input type="file" id="waste-image" accept="image/*" 
+                                   aria-label="Upload waste image">
+                        </label>
+                        <button class="upload-btn" onclick="identifyWaste()">
+                            <span class="btn-icon">📷</span> Identify
+                        </button>
+                    </div>
+                    <div id="image-preview" class="image-preview"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="quick-categories">
+            <h2 class="section-title">Common Waste Categories</h2>
+            <div class="category-grid">
+                <div class="category-card" onclick="showGuide('plastic')" tabindex="0">
+                    <div class="category-icon">🧴</div>
+                    <h3>Plastic</h3>
+                    <p>Bottles, containers, packaging</p>
+                </div>
+                <div class="category-card" onclick="showGuide('paper')" tabindex="0">
+                    <div class="category-icon">📄</div>
+                    <h3>Paper</h3>
+                    <p>Newspapers, cardboard, paper</p>
+                </div>
+                <div class="category-card" onclick="showGuide('glass')" tabindex="0">
+                    <div class="category-icon">🍾</div>
+                    <h3>Glass</h3>
+                    <p>Bottles, jars, containers</p>
+                </div>
+                <div class="category-card" onclick="showGuide('metal')" tabindex="0">
+                    <div class="category-icon">🥫</div>
+                    <h3>Metal</h3>
+                    <p>Cans, foil, scrap metal</p>
+                </div>
+                <div class="category-card" onclick="showGuide('organic')" tabindex="0">
+                    <div class="category-icon">🍎</div>
+                    <h3>Organic</h3>
+                    <p>Food waste, yard trimmings</p>
+                </div>
+                <div class="category-card" onclick="showGuide('hazardous')" tabindex="0">
+                    <div class="category-icon">⚠️</div>
+                    <h3>Hazardous</h3>
+                    <p>Batteries, chemicals, e-waste</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="guide-details" class="guide-details hidden">
+            <div class="guide-header">
+                <h2 id="guide-title" class="guide-title">Recycling Guide</h2>
+                <button class="close-btn" onclick="closeGuide()">×</button>
+            </div>
+            <div id="guide-content" class="guide-content">
+                <!-- Content loaded by JavaScript -->
+            </div>
+            <div id="image-results" class="results-container hidden">
+                <h3>Identification Results</h3>
+                <p id="identified-waste" class="result-text"></p>
+                <div id="waste-instructions" class="instructions"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>♻ Helping you recycle right since 2023</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

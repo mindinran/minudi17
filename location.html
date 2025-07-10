@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Recycling Locations | Waste Sorting Assistant</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Google Maps API -->
+  <script
+    async
+    defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQUtSYm0SOhMc5INYg42ZccbFa3CpupY0&libraries=places"
+  ></script>
+</head>
+<body>
+  <!-- Header -->
+  <header class="main-header">
+    <div class="header-content">
+      <h1>♻ Waste Sorting Assistant</h1>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="guide.html" class="nav-link">Recycling Guide</a>
+        <a href="location.html" class="nav-link active">Drop-off Locations</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="location-container" role="main">
+    <section class="location-search">
+      <h2 class="section-title">Find Recycling Centers</h2>
+
+      <!-- Search Input -->
+      <div class="search-container">
+        <input
+          type="text"
+          id="location-input"
+          placeholder="Enter your address or zip code"
+          aria-label="Search for location"
+        />
+        <button id="location-search-btn" class="search-btn">
+          <span class="btn-icon">🔍</span> Search
+        </button>
+      </div>
+
+      <!-- Google Map -->
+      <div id="map"></div>
+
+      <!-- Results -->
+      <div id="results" class="location-results"></div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <p>♻ Helping you recycle right since 2023</p>
+  </footer>
+
+  <!-- Main Script -->
+  <script src="script.js"></script>
+</body>
+</html>
